@@ -4,12 +4,130 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="css/normalize.css" />
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+         crossorigin="anonymous"
+      />
       <link rel="stylesheet" href="css/style.css" />
       <title>Document</title>
    </head>
    <body>
-      <div class="img_box_prifile">
-         <img src="assets/my_img.jpg" alt="Profile Image" />
+      <div class="container">
+         <div class="left_side">
+            <div class="tabs_nav">
+               <div class="item tabs_nav_item tabs_nav_item--active">
+                  <i class="fa fa-address-card tabs_nav_item-icon" aria-hidden="true"></i>
+                  <span class="tabs_nav_item-text"> About </span>
+               </div>
+               <div class="item tabs_nav_item">
+                  <i class="fa fa-paint-brush tabs_nav_item-icon" aria-hidden="true"></i>
+                  <span class="tabs_nav_item-text"> Resume </span>
+               </div>
+               <div class="item tabs_nav_item">
+                  <i class="fa fa-briefcase tabs_nav_item-icon" aria-hidden="true"></i>
+                  <span class="tabs_nav_item-text"> Portfolio </span>
+               </div>
+            </div>
+            <div class="img_box_prifile">
+               <img src="assets/my_img.jpg" alt="Profile Image" />
+               <div class="name_box">
+                  <span> Ostap Klysa Frontend Developer (Junior) </span>
+               </div>
+               <div class="more_info">
+                  <a href="#">Download CV</a>
+                  <a href="#">Contact me</a>
+               </div>
+            </div>
+         </div>
+         <!-- Right Side -->
+         <div class="right_side" style="display: none">
+            <!-- About -->
+            <div class="about_box">
+               <div class="info_box">
+                  <div class="item info_item">
+                     <span> Contacts </span>
+                     <ul>
+                        <li>Number: +351 937373213</li>
+                        <li>Email: ostapklysa@gmail.com</li>
+                     </ul>
+                  </div>
+                  <div class="item info_item">
+                     <span> About </span>
+                     <ul>
+                        <li>Age: 23 :)</li>
+                        <li>Email: ostapklysa@gmail.com</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!-- Resume -->
+            <div class="resume_box">
+               <div class="skills_box">
+                  <div class="item skill_card">
+                     <i class="fa fa-html5" aria-hidden="true"></i>
+                     html
+                  </div>
+                  <div class="item skill_card">
+                     <i class="fa fa-css3" aria-hidden="true"></i>
+                     css/sass
+                  </div>
+                  <div class="item skill_card">
+                     <i class="fa fa-code" aria-hidden="true"></i>
+                     js
+                  </div>
+                  <div class="item skill_card">
+                     <i class="fa fa-code-fork" aria-hidden="true"></i>
+                     git
+                  </div>
+                  <div class="item skill_card">
+                     <i class="fa fa-terminal" aria-hidden="true"></i>
+                     terminal
+                  </div>
+               </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="portfolio_box">
+               <div class="item portfolio_item">
+                  <span>My works</span>
+               </div>
+               <div class="item portfolio_item">
+                  <img src="assets/sites/labrador.png" alt="Labrador site" />
+                  <a href="https://labrador.pt/" target="_blank">
+                     <i class="fa fa-compass" aria-hidden="true"></i>
+                     Labrador
+                  </a>
+               </div>
+               <div class="item portfolio_item">
+                  <img src="assets/sites/latitid.png" alt="Latitid site" />
+                  <a href="https://latitid.com/" target="_blank">
+                     <i class="fa fa-compass" aria-hidden="true"></i>
+                     Latitid
+                  </a>
+               </div>
+               <div class="item portfolio_item">
+                  <img src="assets/sites/snap.png" alt="Latitid site" />
+                  <a href="http://snap.partners/" target="_blank">
+                     <i class="fa fa-compass" aria-hidden="true"></i>
+                     Snap
+                  </a>
+               </div>
+               <div class="item portfolio_item">
+                  <img src="assets/sites/edulog.png" alt="Edulog site" />
+                  <a href="https://www.edulog.pt/" target="_blank">
+                     <i class="fa fa-compass" aria-hidden="true"></i>
+                     Edulog
+                  </a>
+               </div>
+            </div>
+         </div>
       </div>
+
+      <!-- <footer class="footer">
+         <span> Desidnet by My and developing too :) </span>
+      </footer> -->
    </body>
 </html>

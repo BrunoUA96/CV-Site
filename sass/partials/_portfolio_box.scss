@@ -1,0 +1,49 @@
+.portfolio_box {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+
+   .portfolio_item {
+      width: 32%;
+      position: relative;
+
+      &:first-child {
+         width: 100%;
+      }
+
+      &:hover {
+         a {
+            color: $white;
+         }
+         img {
+            height: auto;
+            width: 200px;
+            left: 50%;
+            transition: all 0.5s;
+            bottom: -75px;
+            transform: translateX(-50%);
+         }
+      }
+
+      a {
+         font-weight: 700;
+         color: #101018;
+         text-decoration: none;
+         display: flex;
+         justify-content: center;
+         line-height: 22px;
+         i {
+            margin-right: 5px;
+            color: #13294b;
+            font-size: 25px;
+         }
+      }
+
+      img {
+         transition: all 0.5s;
+         width: 0;
+         height: 0;
+         position: absolute;
+      }
+   }
+}
