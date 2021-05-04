@@ -2,6 +2,27 @@
 
 * {
    box-sizing: border-box;
+
+   ::-webkit-scrollbar {
+      width: 15px;
+      height: 15px;
+   }
+   ::-webkit-scrollbar-button {
+      width: 10px;
+      height: 10px;
+   }
+   ::-webkit-scrollbar-thumb {
+      background: linear-gradient(0deg, #b721ff 0%, #21d4fd 100%);
+      border-radius: 5px;
+   }
+   ::-webkit-scrollbar-thumb:hover {
+      background: radial-gradient(circle, #21d4fd 0%, #b721ff 100%);
+   }
+   ::-webkit-scrollbar-track {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: inset 2px 30px 15px #f0f0f0;
+   }
 }
 
 body {
@@ -30,6 +51,20 @@ body {
          position: relative;
          display: flex;
          align-items: center;
+      }
+   }
+}
+
+ul {
+   padding: 0;
+   margin-bottom: 0;
+
+   li {
+      list-style: none;
+      font-weight: 400;
+      margin-bottom: 10px;
+      &:last-child {
+         margin-bottom: 0;
       }
    }
 }

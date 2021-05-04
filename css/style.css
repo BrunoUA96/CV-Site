@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 * {
   box-sizing: border-box; }
+  * ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px; }
+  * ::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px; }
+  * ::-webkit-scrollbar-thumb {
+    background: linear-gradient(0deg, #b721ff 0%, #21d4fd 100%);
+    border-radius: 5px; }
+  * ::-webkit-scrollbar-thumb:hover {
+    background: radial-gradient(circle, #21d4fd 0%, #b721ff 100%); }
+  * ::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: inset 2px 30px 15px #f0f0f0; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -24,6 +39,16 @@ body {
       position: relative;
       display: flex;
       align-items: center; }
+
+ul {
+  padding: 0;
+  margin-bottom: 0; }
+  ul li {
+    list-style: none;
+    font-weight: 400;
+    margin-bottom: 10px; }
+    ul li:last-child {
+      margin-bottom: 0; }
 
 .tabs_nav {
   position: absolute;
@@ -80,33 +105,19 @@ body {
       margin-right: 5px;
       color: #13294b; }
 
-.info_box {
-  display: flex;
-  flex-direction: column; }
-  .info_box .info_item {
-    color: #101018;
-    font-size: 15px; }
-    .info_box .info_item ul {
-      padding: 0;
-      margin-bottom: 0; }
-      .info_box .info_item ul li {
-        list-style: none;
-        font-weight: 400;
-        margin-bottom: 10px; }
-        .info_box .info_item ul li:last-child {
-          margin-bottom: 0; }
-
 .img_box_prifile {
-  position: absolute;
-  bottom: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
   cursor: pointer;
   transition: all 0.5s;
-  z-index: 1; }
+  z-index: 1;
+  width: calc(100% - 90px);
+  margin-left: auto;
+  background-color: #fff;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px; }
   .img_box_prifile::before {
     content: '';
     position: absolute;
@@ -114,26 +125,118 @@ body {
     left: 0;
     background-color: #fff;
     width: 100%;
-    height: 100px;
+    height: auto;
     border-radius: 5px 0 0 0;
     z-index: -1; }
-  .img_box_prifile:hover {
-    width: 280px; }
-    .img_box_prifile:hover img {
-      height: 220px; }
-    .img_box_prifile:hover .name_box span {
-      margin: 20px 0; }
-  .img_box_prifile img {
+  .img_box_prifile--image {
     transition: all 0.5s;
     display: block;
-    width: auto;
-    height: 190px; }
-  .img_box_prifile .name_box span {
-    transition: all 0.5s;
-    display: block;
-    margin: 15px 0;
-    font-weight: 700;
-    color: #101018; }
+    width: 130%;
+    height: auto; }
+  .img_box_prifile--name_box {
+    position: relative;
+    width: 100%;
+    padding: 10px; }
+    .img_box_prifile--name_box::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+    .img_box_prifile--name_box span {
+      display: block;
+      text-align: center; }
+  .img_box_prifile--name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px; }
+  .img_box_prifile--career {
+    margin-top: 10px;
+    font-size: 13px; }
+  .img_box_prifile--cv {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    .img_box_prifile--cv::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+    .img_box_prifile--cv a {
+      position: relative;
+      text-decoration: none;
+      color: #21d4fd;
+      padding: 15px 10px; }
+      .img_box_prifile--cv a:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: -webkit-radial-gradient(right, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+  .img_box_prifile--social {
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    .img_box_prifile--social::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+
+.tab_content {
+  background-color: #fff;
+  width: calc(100% - 30px);
+  margin-left: 20px;
+  border-radius: 5px;
+  padding: 15px;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .tab_content--box {
+    display: flex;
+    flex-wrap: wrap; }
+    .tab_content--box_about {
+      flex: 1;
+      padding: 10px;
+      position: relative; }
+      .tab_content--box_about::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+  .tab_content--title {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px; }
+    .tab_content--title::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
 
 .portfolio_box {
   display: flex;
@@ -169,6 +272,19 @@ body {
       width: 0;
       height: 0;
       position: absolute; }
+
+.right_side {
+  position: relative; }
+  .right_side::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: -1; }
 
 .footer {
   position: absolute;
