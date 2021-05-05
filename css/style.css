@@ -50,6 +50,9 @@ ul {
     ul li:last-child {
       margin-bottom: 0; }
 
+.show {
+  display: block !important; }
+
 .tabs_nav {
   position: absolute;
   top: 50%;
@@ -206,7 +209,8 @@ ul {
   padding: 15px;
   height: 100%;
   overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  display: none; }
   .tab_content--box {
     display: flex;
     flex-wrap: wrap; }
@@ -238,40 +242,36 @@ ul {
       width: 100%;
       background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
 
-.portfolio_box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  .portfolio_box .portfolio_item {
-    width: 32%;
-    position: relative; }
-    .portfolio_box .portfolio_item:first-child {
-      width: 100%; }
-    .portfolio_box .portfolio_item:hover a {
-      color: #fff; }
-    .portfolio_box .portfolio_item:hover img {
-      height: auto;
-      width: 200px;
-      left: 50%;
-      transition: all 0.5s;
-      bottom: -75px;
-      transform: translateX(-50%); }
-    .portfolio_box .portfolio_item a {
-      font-weight: 700;
-      color: #101018;
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      line-height: 22px; }
-      .portfolio_box .portfolio_item a i {
-        margin-right: 5px;
-        color: #13294b;
-        font-size: 25px; }
-    .portfolio_box .portfolio_item img {
-      transition: all 0.5s;
-      width: 0;
-      height: 0;
-      position: absolute; }
+.portfolio_box .portfolio_item {
+  width: 32%;
+  position: relative; }
+  .portfolio_box .portfolio_item:first-child {
+    width: 100%; }
+  .portfolio_box .portfolio_item:hover a {
+    color: #fff; }
+  .portfolio_box .portfolio_item:hover img {
+    height: auto;
+    width: 200px;
+    left: 50%;
+    transition: all 0.5s;
+    bottom: -75px;
+    transform: translateX(-50%); }
+  .portfolio_box .portfolio_item a {
+    font-weight: 700;
+    color: #101018;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    line-height: 22px; }
+    .portfolio_box .portfolio_item a i {
+      margin-right: 5px;
+      color: #13294b;
+      font-size: 25px; }
+  .portfolio_box .portfolio_item img {
+    transition: all 0.5s;
+    width: 0;
+    height: 0;
+    position: absolute; }
 
 .right_side {
   position: relative; }
