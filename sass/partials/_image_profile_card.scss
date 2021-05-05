@@ -12,6 +12,10 @@
    overflow: hidden;
    border-radius: 5px;
 
+   @media screen and (max-width: 780px) {
+      width: 100%;
+   }
+
    &::before {
       content: '';
       position: absolute;

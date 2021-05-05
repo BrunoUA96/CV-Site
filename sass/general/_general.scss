@@ -41,9 +41,18 @@ body {
       margin: 20px auto;
       padding: 10px;
 
+      @media screen and (max-width: 780px) {
+         height: auto;
+         flex-direction: column;
+      }
+
       .left_side {
          width: 350px;
          position: relative;
+
+         @media screen and (max-width: 780px) {
+            width: 100%;
+         }
       }
 
       .right_side {
@@ -51,6 +60,10 @@ body {
          position: relative;
          display: flex;
          align-items: center;
+
+         @media screen and (max-width: 780px) {
+            width: 100%;
+         }
       }
    }
 }
