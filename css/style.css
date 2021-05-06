@@ -227,15 +227,25 @@ ul {
       background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
 
 .tab_content {
+  position: absolute;
+  left: -280px;
+  top: 0;
+  width: 260px;
   background-color: #fff;
-  width: calc(100% - 30px);
   margin-left: 20px;
   border-radius: 5px;
   padding: 15px;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  display: none; }
+  transition: all 0.5s;
+  z-index: -1;
+  opacity: 0; }
+  .tab_content--show {
+    width: calc(100% - 30px);
+    position: relative;
+    left: 0;
+    opacity: 1; }
   .tab_content--box {
     display: flex;
     flex-wrap: wrap; }

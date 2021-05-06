@@ -1,18 +1,28 @@
-console.log('Olá');
 addEventListener('DOMContentLoaded', () => {
    let tabsNav = document.querySelectorAll('.tabs_nav_item'),
       tabsContent = document.querySelectorAll('.tab_content');
-   tabsContent[0].classList.add('show');
 
+   // On load page first nav & first content active
+   tabsNav[0].classList.add('tabs_nav_item--active');
+   tabsContent[0].classList.add('tab_content--show');
+
+   // Loop all tabsNav
    tabsNav.forEach((tab, index) => {
+      // On tabNav item Click
       tab.addEventListener('click', () => {
+         // Loop Content
          tabsContent.forEach((content, contentIndex) => {
-            content.classList.remove('show');
+            // Remove Active class on all items
+            content.classList.remove('tab_content--show');
             tabsNav[contentIndex].classList.remove('tabs_nav_item--active');
          });
 
-         tab.classList.add('tabs_nav_item--active');
-         tabsContent[index].classList.add('show');
+         // TimeOut on show Active items
+         setTimeout(function () {
+            // Add Active class on clicked Items
+            tab.classList.add('tabs_nav_item--active');
+            tabsContent[index].classList.add('tab_content--show');
+         }, 500);
       });
    });
 });
