@@ -36,6 +36,15 @@
       display: block;
       width: 130%;
       height: auto;
+
+      @media screen and (max-width: 780px) {
+         height: calc(100vh - 60vh);
+         width: 130%;
+         object-fit: cover;
+         object-position: top;
+         position: relative;
+         top: -15px;
+      }
    }
 
    &--name_box {
@@ -130,6 +139,12 @@
       align-items: center;
       justify-content: space-evenly;
 
+      @media screen and (max-width: 780px) {
+         margin-top: auto;
+         justify-content: space-evenly;
+         font-size: 20px;
+      }
+
       &::before {
          content: '';
          position: absolute;
@@ -143,6 +158,12 @@
             rgba(197, 202, 213, 0.7) 0%,
             rgba(255, 255, 255, 0) 70%
          );
+      }
+
+      @media screen and (max-width: 780px) {
+         &::before {
+            content: none;
+         }
       }
    }
 }

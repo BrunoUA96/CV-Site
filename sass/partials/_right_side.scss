@@ -14,5 +14,9 @@
       background-color: $white;
       border-radius: 5px;
       z-index: -1;
+
+      @media screen and (max-width: 780px) {
+         content: none;
+      }
    }
 }

@@ -32,6 +32,10 @@ body {
    font-weight: 400;
    font-size: 16px;
 
+   @media screen and (max-width: 780px) {
+      font-size: 13px;
+   }
+
    .container {
       position: relative;
       display: flex;
@@ -42,8 +46,10 @@ body {
       padding: 10px;
 
       @media screen and (max-width: 780px) {
+         width: 100%;
          height: auto;
          flex-direction: column;
+         margin: 0;
       }
 
       .left_side {
@@ -80,8 +86,4 @@ ul {
          margin-bottom: 0;
       }
    }
-}
-
-.show {
-   display: block !important;
 }
