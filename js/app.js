@@ -50,7 +50,7 @@ addEventListener('DOMContentLoaded', () => {
       });
    });
 
-   if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
-      document.querySelector('body').style.display = 'none';
-   }
+   // if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+   //    document.querySelector('body').style.display = 'none';
+   // }
 });
