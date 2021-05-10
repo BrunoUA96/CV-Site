@@ -252,7 +252,7 @@ ul {
     z-index: 1; }
     @media screen and (max-width: 870px) {
       .tab_content--show {
-        min-height: calc(100vh - 81px);
+        min-height: calc(100vh - 141px);
         width: 100%;
         margin: 0; } }
   .tab_content--box {
