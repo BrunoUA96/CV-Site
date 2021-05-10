@@ -23,6 +23,8 @@ addEventListener('DOMContentLoaded', () => {
    // On load page first nav & first content active
    tabsNav[0].classList.add('tabs_nav_item--active');
    document.querySelectorAll('.tab_content')[0].classList.add('tab_content--show');
+   document.querySelector('.right_side').classList.add('open-side');
+
    // Loop all tabsNav
    tabsNav.forEach((tab, index) => {
       // On tabNav item Click
@@ -32,6 +34,7 @@ addEventListener('DOMContentLoaded', () => {
             // Remove Active class on all items
             content.classList.remove('tab_content--show');
             tabsNav[contentIndex].classList.remove('tabs_nav_item--active');
+            document.querySelector('.right_side').classList.remove('open-side');
          });
 
          // TimeOut on show Active items
@@ -40,6 +43,14 @@ addEventListener('DOMContentLoaded', () => {
             tab.classList.add('tabs_nav_item--active');
             tabsContent[index].classList.add('tab_content--show');
          }, 500);
+
+         setTimeout(function () {
+            document.querySelector('.right_side').classList.add('open-side');
+         }, 950);
       });
    });
+
+   if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+      document.querySelector('body').style.display = 'none';
+   }
 });

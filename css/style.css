@@ -117,22 +117,6 @@ ul {
     .tabs_nav_item--active {
       color: #b721ff; }
 
-.skills_box {
-  display: flex;
-  flex-wrap: wrap; }
-  .skills_box .skill_card {
-    position: relative;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 700;
-    color: #101018; }
-    .skills_box .skill_card i {
-      margin-right: 5px;
-      color: #13294b; }
-
 .img_box_prifile {
   display: flex;
   flex-direction: column;
@@ -274,11 +258,11 @@ ul {
   .tab_content--box {
     display: flex;
     flex-wrap: wrap; }
-    .tab_content--box_about {
+    .tab_content--box_item {
       flex: 1;
       padding: 10px;
       position: relative; }
-      .tab_content--box_about::before {
+      .tab_content--box_item::before {
         content: '';
         position: absolute;
         top: 0;
@@ -301,6 +285,21 @@ ul {
       height: 1px;
       width: 100%;
       background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
+  .tab_content--item_site {
+    transition: all 0.5s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+    position: relative; }
+    .tab_content--item_site:last-child {
+      margin-right: 0; }
+    .tab_content--item_site_image {
+      max-width: 100%; }
+    .tab_content--item_site_link {
+      text-decoration: none;
+      margin-top: 15px; }
 
 .portfolio_box .portfolio_item {
   width: 32%;
@@ -338,16 +337,24 @@ ul {
   .right_side::before {
     content: '';
     position: absolute;
-    right: 0;
+    left: -250px;
+    right: auto;
     top: 0;
     height: 100%;
     width: 20px;
     background-color: #fff;
     border-radius: 5px;
-    z-index: -1; }
+    z-index: -1;
+    transition: all 0.3s;
+    opacity: 0; }
     @media screen and (max-width: 780px) {
       .right_side::before {
         content: none; } }
+  .right_side.open-side::before {
+    transition: all 0.3s;
+    right: 0;
+    left: auto;
+    opacity: 1; }
 
 .footer {
   position: absolute;
