@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap");
 * {
   box-sizing: border-box; }
   * ::-webkit-scrollbar {
@@ -25,7 +25,7 @@ body {
   @media screen and (max-width: 780px) {
     body {
       font-size: 13px;
-      height: 100vh; } }
+      height: calc(100vh - 61px); } }
   body .container {
     position: relative;
     display: flex;
@@ -255,9 +255,19 @@ ul {
         min-height: calc(100vh - 81px);
         width: 100%;
         margin: 0; } }
+  .tab_content.portfolio_box .tab_content--box {
+    grid-template-columns: repeat(4, 1fr); }
+  .tab_content.about_box p {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    text-align: justify;
+    font-size: 15px; }
   .tab_content--box {
-    display: flex;
-    flex-wrap: wrap; }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    align-items: center; }
     .tab_content--box_item {
       flex: 1;
       padding: 10px;
@@ -272,11 +282,13 @@ ul {
         background: -webkit-radial-gradient(left, ellipse cover, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%); }
   .tab_content--title {
     position: relative;
-    flex-shrink: 0;
-    width: 100%;
+    grid-column: 1 / -1;
     margin-top: 0;
-    margin-bottom: 20px;
-    padding-bottom: 15px; }
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    font-weight: 400; }
+    .tab_content--title::first-word {
+      color: red; }
     .tab_content--title::before {
       content: '';
       position: absolute;
@@ -291,12 +303,16 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5px;
-    position: relative; }
+    position: relative;
+    background-image: linear-gradient(19deg, #21d4fda6 0%, #b721ff66 100%);
+    min-height: 150px;
+    justify-content: center;
+    border-radius: 5px; }
     .tab_content--item_site:last-child {
       margin-right: 0; }
     .tab_content--item_site_image {
-      max-width: 100%; }
+      max-width: 60%;
+      max-height: 70px; }
     .tab_content--item_site_link {
       text-decoration: none;
       margin-top: 15px; }

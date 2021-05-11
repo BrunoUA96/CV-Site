@@ -50,7 +50,10 @@ addEventListener('DOMContentLoaded', () => {
       });
    });
 
+   // Height site if IOS small devise
    if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
-      document.querySelector('.tab_content ').style.minHeight = 'calc(100vh - 195px)';
+      document.querySelector('.tab_content ').style.height = 'calc(100vh - 195px)';
+      document.querySelector('.tab_content ').style.minHeight = 'auto';
+      document.querySelector('body').style.height = 'calc(100vh - 195px)';
    }
 });

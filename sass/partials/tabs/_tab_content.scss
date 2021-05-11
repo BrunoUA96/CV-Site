@@ -28,9 +28,27 @@
       }
    }
 
+   &.portfolio_box {
+      .tab_content--box {
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
+
+   &.about_box {
+      p {
+         font-weight: 300;
+         letter-spacing: 0.5px;
+         line-height: 25px;
+         text-align: justify;
+         font-size: 15px;
+      }
+   }
+
    &--box {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+      align-items: center;
 
       &_item {
          flex: 1;
@@ -55,14 +73,15 @@
 
    &--title {
       position: relative;
-      flex-shrink: 0;
-      width: 100%;
+      grid-column: 1 / -1;
       margin-top: 0;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      // background: -webkit-linear-gradient(90deg, #21d4fd 50%, #b721ff 100%);
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
+      margin-bottom: 0;
+      padding-bottom: 10px;
+      font-weight: 400;
+
+      &::first-word {
+         color: red;
+      }
 
       &::before {
          content: '';
@@ -78,6 +97,23 @@
             rgba(255, 255, 255, 0) 70%
          );
       }
+
+      // &::after {
+      //    content: '';
+      //    position: absolute;
+      //    left: -12px;
+      //    top: 0;
+      //    width: 30px;
+      //    height: 30px;
+      //    background: -moz-linear-gradient(19deg, #21d4fda6 0%, #b721ff66 100%);
+      //    background: -webkit-linear-gradient(19deg, #21d4fda6 0%, #b721ff66 100%);
+      //    background: linear-gradient(19deg, #21d4fda6 0%, #b721ff66 100%);
+      //    z-index: -1;
+      //    border-radius: 30px;
+      //    -moz-border-radius: 30px;
+      //    -webkit-border-radius: 30px;
+      //    -khtml-border-radius: 30px;
+      // }
    }
 
    &--item_site {
@@ -86,15 +122,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 5px;
       position: relative;
+      background-image: linear-gradient(19deg, #21d4fda6 0%, #b721ff66 100%);
+      min-height: 150px;
+      justify-content: center;
+      border-radius: 5px;
 
       &:last-child {
          margin-right: 0;
       }
 
       &_image {
-         max-width: 100%;
+         max-width: 60%;
+         max-height: 70px;
       }
 
       &_link {
