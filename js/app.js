@@ -27,6 +27,14 @@ addEventListener('DOMContentLoaded', () => {
 
    // Loop all tabsNav
    tabsNav.forEach((tab, index) => {
+      // Height site if IOS small devise
+
+      if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
+         tabsContent[index].style.height = 'calc(100vh - 195px)';
+         tabsContent[index].style.minHeight = 'auto';
+         document.querySelector('body').style.height = 'calc(100vh - 175px)';
+      }
+
       // On tabNav item Click
       tab.addEventListener('click', () => {
          // Loop Content
@@ -46,14 +54,14 @@ addEventListener('DOMContentLoaded', () => {
 
          setTimeout(function () {
             document.querySelector('.right_side').classList.add('open-side');
+
+            setTimeout(function () {
+               let progressBar = document.querySelectorAll('.progress_bar');
+               progressBar.forEach((item) => {
+                  item.classList.add('action_height');
+               });
+            }, 750);
          }, 950);
       });
    });
-
-   // Height site if IOS small devise
-   if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPod/i)) {
-      document.querySelector('.tab_content ').style.height = 'calc(100vh - 195px)';
-      document.querySelector('.tab_content ').style.minHeight = 'auto';
-      document.querySelector('body').style.height = 'calc(100vh - 195px)';
-   }
 });
