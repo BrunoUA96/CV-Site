@@ -2,6 +2,7 @@
 .left_side {
    width: 350px;
    position: relative;
+   flex-shrink: 0;
 
    @media screen and (max-width: $large) {
       width: 100%;

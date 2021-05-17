@@ -4,7 +4,6 @@
    top: 0;
    width: 260px;
    background-color: var(--white);
-   margin-left: 20px;
    border-radius: 5px;
    padding: 15px;
    height: 100%;
@@ -22,7 +21,7 @@
    }
 
    &--show {
-      width: calc(100% - 30px);
+      width: calc(100% - 10px);
       position: relative;
       left: 0;
       opacity: 1;
