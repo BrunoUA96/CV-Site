@@ -37,6 +37,12 @@ body {
       overflow: hidden;
    }
 
+   @media screen and (min-width: $desktop) {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+   }
+
    .container {
       position: relative;
       display: flex;
@@ -51,6 +57,10 @@ body {
          height: auto;
          flex-direction: column;
          margin: 0;
+      }
+
+      @media screen and (min-width: $desktop) {
+         max-height: 1080px;
       }
    }
 }

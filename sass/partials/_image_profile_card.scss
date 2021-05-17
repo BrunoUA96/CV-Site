@@ -42,6 +42,10 @@
          position: relative;
          top: -15px;
       }
+
+      @media screen and (max-height: $small - 70) {
+         height: 350px !important;
+      }
    }
 
    &--name_box {

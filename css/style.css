@@ -37,6 +37,11 @@ body {
     body {
       height: calc(100vh - 61px);
       overflow: hidden; } }
+  @media screen and (min-width: 1140px) {
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center; } }
   body .container {
     position: relative;
     display: flex;
@@ -51,6 +56,9 @@ body {
         height: auto;
         flex-direction: column;
         margin: 0; } }
+    @media screen and (min-width: 1140px) {
+      body .container {
+        max-height: 1080px; } }
 
 ul {
   padding: 0;
@@ -163,6 +171,9 @@ ul {
         object-position: top;
         position: relative;
         top: -15px; } }
+    @media screen and (max-height: 506px) {
+      .img_box_prifile--image {
+        height: 350px !important; } }
   .img_box_prifile--name_box {
     position: relative;
     width: 100%;
