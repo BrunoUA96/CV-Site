@@ -73,6 +73,9 @@ ul {
 .f-wrap {
   flex-wrap: wrap; }
 
+.f-nowrap {
+  flex-wrap: nowrap !important; }
+
 .left_side {
   width: 350px;
   position: relative; }
@@ -314,6 +317,9 @@ ul {
         font-size: 15px;
         display: flex;
         align-items: baseline; }
+        @media screen and (max-width: 768px) {
+          .tab_content--box_item li {
+            font-size: 13px; } }
         .tab_content--box_item li ul {
           width: 100%;
           margin-left: 35px; }
