@@ -1,8 +1,18 @@
+// General scss for Right Site Side
 @import './tabs/tab_content';
 @import 'portfolio_box';
 
+// Partials in Right Side
 .right_side {
    position: relative;
+   width: calc(100% - 350px);
+   position: relative;
+   display: flex;
+   align-items: center;
+
+   @media screen and (max-width: $large) {
+      width: 100%;
+   }
 
    &::before {
       content: '';
@@ -12,13 +22,13 @@
       top: 0;
       height: 100%;
       width: 20px;
-      background-color: $white;
+      background-color: var(--white);
       border-radius: 5px;
       z-index: -1;
       transition: all 0.3s;
       opacity: 0;
 
-      @media screen and (max-width: 780px) {
+      @media screen and (max-width: $large) {
          content: none;
       }
    }

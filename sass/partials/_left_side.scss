@@ -1,3 +1,13 @@
+// General scss for Left Side Side
+.left_side {
+   width: 350px;
+   position: relative;
+
+   @media screen and (max-width: $large) {
+      width: 100%;
+   }
+}
+
+// Partials in Left Side
 @import 'tabs/tabs_nav';
-@import 'info_box';
 @import 'image_profile_card';

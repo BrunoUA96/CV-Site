@@ -12,7 +12,7 @@
    overflow: hidden;
    border-radius: 5px;
 
-   @media screen and (max-width: 780px) {
+   @media screen and (max-width: $large) {
       width: 100%;
    }
 
@@ -21,14 +21,11 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: $white;
+      background-color: var(--white);
       width: 100%;
       height: auto;
       border-radius: 5px 0 0 0;
       z-index: -1;
-   }
-
-   &:hover {
    }
 
    &--image {
@@ -37,7 +34,7 @@
       width: 130%;
       height: auto;
 
-      @media screen and (max-width: 780px) {
+      @media screen and (max-width: $large) {
          height: calc(100vh - 60vh);
          width: 130%;
          object-fit: cover;
@@ -109,7 +106,7 @@
       a {
          position: relative;
          text-decoration: none;
-         color: #21d4fd;
+         color: var(--blue);
          padding: 15px 10px;
 
          &:not(:last-child) {
@@ -133,16 +130,15 @@
 
    &--social {
       position: relative;
-      padding: 15px;
-      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      width: 100%;
+      padding: 15px;
 
-      @media screen and (max-width: 780px) {
+      @media screen and (max-width: $large) {
          margin-top: auto;
          justify-content: space-evenly;
-         font-size: 20px;
       }
 
       &::before {
@@ -160,9 +156,28 @@
          );
       }
 
-      @media screen and (max-width: 780px) {
+      @media screen and (max-width: $large) {
          &::before {
             content: none;
+         }
+      }
+
+      &__item_link {
+         i {
+            color: var(--purple);
+            font-size: 18px;
+            transition: all 0.5s;
+
+            @media screen and (max-width: $large) {
+               font-size: 20px;
+            }
+         }
+
+         &:hover {
+            i {
+               transform: scale(1.4);
+               color: var(--blue);
+            }
          }
       }
    }

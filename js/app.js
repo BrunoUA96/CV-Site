@@ -1,5 +1,5 @@
 addEventListener('DOMContentLoaded', () => {
-   if (screen.width < 780) {
+   if (screen.width < 992) {
       document.querySelector('.img_box_prifile').classList.add('tab_content');
 
       let mobileTabImg = document.createElement('div');
@@ -18,7 +18,6 @@ addEventListener('DOMContentLoaded', () => {
 
    let tabsNav = document.querySelectorAll('.tabs_nav_item'),
       tabsContent = document.querySelectorAll('.tab_content');
-   console.log(tabsNav);
 
    // On load page first nav & first content active
    tabsNav[0].classList.add('tabs_nav_item--active');
@@ -55,12 +54,19 @@ addEventListener('DOMContentLoaded', () => {
          setTimeout(function () {
             document.querySelector('.right_side').classList.add('open-side');
 
-            setTimeout(function () {
+            if (document.querySelector('.resume_box').classList.contains('tab_content--show')) {
+               setTimeout(function () {
+                  let progressBar = document.querySelectorAll('.progress_bar');
+                  progressBar.forEach((item) => {
+                     item.classList.add('action_height');
+                  });
+               }, 750);
+            } else {
                let progressBar = document.querySelectorAll('.progress_bar');
                progressBar.forEach((item) => {
-                  item.classList.add('action_height');
+                  item.classList.remove('action_height');
                });
-            }, 750);
+            }
          }, 950);
       });
    });

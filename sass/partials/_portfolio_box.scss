@@ -1,8 +1,4 @@
 .portfolio_box {
-   // display: flex;
-   // flex-wrap: wrap;
-   // justify-content: space-between;
-
    .portfolio_item {
       width: 32%;
       position: relative;
@@ -13,7 +9,7 @@
 
       &:hover {
          a {
-            color: $white;
+            color: var(--white);
          }
          img {
             height: auto;

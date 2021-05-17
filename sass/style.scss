@@ -1,8 +1,9 @@
 // General Styles
+@import 'general/font';
 @import 'general/colors';
+@import 'general/media';
 @import 'general/general';
+
 // Site Parts
 @import 'partials/left_side';
 @import 'partials/right_side';
-// Footer
-@import 'partials/footer';
