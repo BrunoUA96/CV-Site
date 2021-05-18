@@ -29,11 +29,10 @@ addEventListener('DOMContentLoaded', () => {
             // Add Active class on clicked Items
             tab.classList.add('tabs_nav_item--active');
             tabsContent[index].classList.add('tab_content--show');
+            document.querySelector('.right_side').classList.add('open-side');
          }, 500);
 
          setTimeout(function () {
-            document.querySelector('.right_side').classList.add('open-side');
-
             if (document.querySelector('.resume_box').classList.contains('tab_content--show')) {
                setTimeout(function () {
                   let progressBar = document.querySelectorAll('.progress_bar');
