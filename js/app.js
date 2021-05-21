@@ -1,14 +1,24 @@
 addEventListener('DOMContentLoaded', () => {
-   mobileAddTabImage();
+   // On mobile Add more one tab for image
+   if (screen.width < 992) {
+      mobileAddTabImage();
+   }
+
+   // -- All elements
 
    // All Tabs Buttons and Tabs Content
-   let tabsNav = document.querySelectorAll('.tabs_nav_item'),
-      tabsContent = document.querySelectorAll('.tab_content');
+   const tabsNav = document.querySelectorAll('.tabs_nav_item'),
+      tabsContent = document.querySelectorAll('.tab_content'),
+      rightSideSite = document.querySelector('.right_side'),
+      resumeSlide = document.querySelector('.resume_box'),
+      progressBarResume = document.querySelectorAll('.progress_bar');
+
+   // Show Right side
+   addClassElement(rightSideSite, 'add', 'open-side');
 
    // On load page first nav & first content active
-   tabsNav[0].classList.add('tabs_nav_item--active');
-   tabsContent[0].classList.add('tab_content--show');
-   document.querySelector('.right_side').classList.add('open-side');
+   addClassElement(tabsNav[0], 'add', 'tabs_nav_item--active');
+   addClassElement(tabsContent[0], 'add', 'tab_content--show');
 
    // Loop all tabsNav
    tabsNav.forEach((tab, index) => {
@@ -17,31 +27,29 @@ addEventListener('DOMContentLoaded', () => {
          // Loop Content
          tabsContent.forEach((content, contentIndex) => {
             // Remove Active class on all items
-            content.classList.remove('tab_content--show');
-            tabsNav[contentIndex].classList.remove('tabs_nav_item--active');
-            document.querySelector('.right_side').classList.remove('open-side');
+            addClassElement(content, 'remove', 'tab_content--show');
+            addClassElement(tabsNav[contentIndex], 'remove', 'tabs_nav_item--active');
+            addClassElement(rightSideSite, 'remove', 'open-side');
          });
 
          // TimeOut on show Active items
          setTimeout(function () {
             // Add Active class on clicked Items
-            tab.classList.add('tabs_nav_item--active');
-            tabsContent[index].classList.add('tab_content--show');
-            document.querySelector('.right_side').classList.add('open-side');
+            addClassElement(tab, 'add', 'tabs_nav_item--active');
+            addClassElement(tabsContent[index], 'add', 'tab_content--show');
+            addClassElement(rightSideSite, 'add', 'open-side');
          }, 500);
 
          setTimeout(function () {
-            if (document.querySelector('.resume_box').classList.contains('tab_content--show')) {
+            if (resumeSlide.classList.contains('tab_content--show')) {
                setTimeout(function () {
-                  let progressBar = document.querySelectorAll('.progress_bar');
-                  progressBar.forEach((item) => {
-                     item.classList.add('action_height');
+                  progressBarResume.forEach((item) => {
+                     addClassElement(item, 'add', 'action_height');
                   });
                }, 750);
             } else {
-               let progressBar = document.querySelectorAll('.progress_bar');
-               progressBar.forEach((item) => {
-                  item.classList.remove('action_height');
+               progressBarResume.forEach((item) => {
+                  addClassElement(item, 'remove', 'action_height');
                });
             }
          }, 950);
@@ -51,20 +59,28 @@ addEventListener('DOMContentLoaded', () => {
 
 // On mobile Add more one tab for image
 function mobileAddTabImage() {
-   if (screen.width < 992) {
-      document.querySelector('.img_box_prifile').classList.add('tab_content');
+   addClassElement(document.querySelector('.img_box_prifile'), 'add', 'tab_content');
 
-      let mobileTabImg = document.createElement('div');
-      mobileTabImg.classList.add('item', 'tabs_nav_item');
-      mobileTabImg.innerHTML =
-         '<i class="fa fa-picture-o" aria-hidden="true"></i><span class="tabs_nav_item-text"> Info </span>';
+   // Create Div
+   const mobileTabImg = document.createElement('div');
+   mobileTabImg.classList.add('item', 'tabs_nav_item');
 
-      // Получаем ссылку на элемент, перед которым мы хотим вставить sp1
-      let firstElementTabHTML = document.getElementsByClassName('tabs_nav_item')[0];
-      //Получаем ссылку на родителя sp2
-      let parentDiv = firstElementTabHTML.parentNode;
+   // Add Icon for tabItem
+   mobileTabImg.innerHTML =
+      '<i class="fa fa-picture-o" aria-hidden="true"></i><span class="tabs_nav_item-text"> Info </span>';
 
-      // Вставляем sp1 перед sp2
-      parentDiv.insertBefore(mobileTabImg, firstElementTabHTML);
+   // Get a link to the element before which we want to insert
+   const firstElementTabHTML = document.getElementsByClassName('tabs_nav_item')[0];
+
+   // add element before first
+   firstElementTabHTML.parentNode.insertBefore(mobileTabImg, firstElementTabHTML);
+}
+
+// Add or remove aclass
+function addClassElement(element, operation, classElement) {
+   if (operation == 'add') {
+      element.classList.add(classElement);
+   } else {
+      element.classList.remove(classElement);
    }
 }
