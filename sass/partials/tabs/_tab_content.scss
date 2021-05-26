@@ -14,8 +14,10 @@
    opacity: 0;
 
    @media screen and (max-width: $large) {
-      height: calc(100vh - 81px);
-      min-height: calc(100vh - 81px);
+      // height: calc(100vh - 81px);
+      // min-height: calc(100vh - 81px);
+      height: 100%;
+      height: calc(var(--app-height) - 81px);
       width: 100% !important;
       margin: 0;
    }
