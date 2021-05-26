@@ -1,3 +1,5 @@
+'use strict';
+
 addEventListener('DOMContentLoaded', () => {
    // On mobile Add more one tab for image
    if (screen.width < 992) {
