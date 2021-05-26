@@ -4,6 +4,10 @@ addEventListener('DOMContentLoaded', () => {
       mobileAddTabImage();
    }
 
+   // Mobile Height screen
+   window.addEventListener('resize', appHeight);
+   appHeight();
+
    // -- All elements
 
    // All Tabs Buttons and Tabs Content
@@ -58,7 +62,7 @@ addEventListener('DOMContentLoaded', () => {
 });
 
 // On mobile Add more one tab for image
-function mobileAddTabImage() {
+const mobileAddTabImage = () => {
    addClassElement(document.querySelector('.img_box_prifile'), 'add', 'tab_content');
 
    // Create Div
@@ -74,20 +78,18 @@ function mobileAddTabImage() {
 
    // add element before first
    firstElementTabHTML.parentNode.insertBefore(mobileTabImg, firstElementTabHTML);
-}
+};
 
 // Add or remove aclass
-function addClassElement(element, operation, classElement) {
+const addClassElement = (element, operation, classElement) => {
    if (operation == 'add') {
       element.classList.add(classElement);
    } else {
       element.classList.remove(classElement);
    }
-}
+};
 
 const appHeight = () => {
    const doc = document.documentElement;
    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
 };
-window.addEventListener('resize', appHeight);
-appHeight();
